@@ -1,0 +1,59 @@
+﻿<Window x:Class="EventWPFProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EventWPFProject"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        MouseDown="SomeOne_MouseDown"
+        PreviewMouseDown="SomeOne_MouseDown">
+    <Grid MouseDown="SomeOne_MouseDown"
+          PreviewMouseDown="SomeOne_MouseDown">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0"
+               Margin="5"
+               BorderThickness="1"
+               BorderBrush="Black"
+               HorizontalAlignment="Left"
+               MouseDown="SomeOne_MouseDown"
+               PreviewMouseDown="SomeOne_MouseDown">
+            <StackPanel MouseDown="SomeOne_MouseDown">
+                <TextBlock Text="Кликни на картинку"
+                           MouseDown="SomeOne_MouseDown"/>
+                <Image Source="/EventWPFProject;component/Images/Chrysanthemum.jpg"
+                       Stretch="Uniform"
+                       Width="120" 
+                       MouseDown="SomeOne_MouseDown" PreviewMouseDown="SomeOne_MouseDown"/>
+            </StackPanel>
+        </Label>
+
+        <ListBox Grid.Row="1"
+                 Margin="5"
+                 Name="lb"/>
+
+        <CheckBox Grid.Row="2"
+                  IsChecked="False" 
+                  Margin="5,3"
+                  Name="cb"
+                  Content="Handle"/>
+
+        <StackPanel Grid.Row="3" ButtonBase.Click="StackPanel_Click"
+                    Orientation="Horizontal"
+                    FlowDirection="RightToLeft">
+            <Button Margin="5" 
+                    Padding="2,3"
+                    Content="Выход" 
+                    Click="Button_Click" />
+            <Button Margin="5"
+                    Padding="2,3"
+                    Click="Button_Click_1">Очистить</Button>
+        </StackPanel>
+
+    </Grid>
+</Window>
